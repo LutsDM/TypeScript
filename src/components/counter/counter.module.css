@@ -1,0 +1,28 @@
+/* counter.module.css */
+.image {
+    max-width: 500px;
+    height: auto;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .span_counter {
+    font-weight: bold;
+    font-size: 20px;
+  }
