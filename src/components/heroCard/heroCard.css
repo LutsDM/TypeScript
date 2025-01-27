@@ -1,0 +1,48 @@
+
+
+.heroCardNew {
+  padding: 10px 40px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  min-height: 450px;
+  max-height: 450px;
+
+}
+
+.heroCardImgWrapperNew {
+  overflow: hidden;
+  border-radius: 40px;
+  height: 300px;
+}
+
+.heroCardImgWrapperNew > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroCardLightNew {
+  border: 2px solid blue;
+}
+
+.heroCardDarkNew {
+  border: 2px solid red;
+}
+
+.heroCardNew {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.heroCardNew:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heroCardLightNew:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 255, 0.7); 
+}
+
+.heroCardDarkNew:hover {
+  box-shadow: 0 20px 20px rgba(255, 0, 0, 0.7); 
+}
