@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import './App.css'
-import Sandwich from './components/sandwich/Sandwich'
 import CinemasAroundMe from './homeworks/homework07/CinemasAroundMe/CinemasAroundMe'
-
+import Lesson08 from './lessons/lesson08/Lesson08'
 
 function App() {
   
   return (
     <>
-      <CinemasAroundMe />
+      <Lesson08 />
     </>
   )
 }
