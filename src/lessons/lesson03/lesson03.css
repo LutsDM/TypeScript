@@ -1,0 +1,13 @@
+.output {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    border-color: rgb(210, 241, 67);
+    background-color: aliceblue;
+    color: brown;
+}

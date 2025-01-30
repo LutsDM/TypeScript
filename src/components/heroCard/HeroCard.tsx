@@ -1,7 +1,16 @@
-/* eslint-disable react/prop-types */
-import "./heroCard.css";
 
-export default function HeroCard({ id, name, age, isDark, weapons, image }) {
+import "./heroCard.css";
+interface HeroCard{
+  id:number;
+  name:string;
+  age:number;
+  isDark:boolean;
+  weapons:string[];
+  image:string
+
+}
+
+export default function HeroCard({ id, name, age, isDark, weapons, image }:HeroCard) {
   return (
     <div className="heroCardNew" key={id}>
       <p>{name}</p>

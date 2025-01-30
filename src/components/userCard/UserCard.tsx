@@ -1,7 +1,12 @@
-/* eslint-disable react/prop-types */
 import './userCard.css'
 
-function UserCard({name, age, hobby}) {
+interface UserCard {
+  name:string;
+  age:number;
+  hobby?:string;
+}
+
+function UserCard({name, age, hobby}:UserCard) {
   return (
     <div className='userCard'>
         <h4>Name: {name} </h4>

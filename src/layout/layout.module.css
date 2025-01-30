@@ -1,0 +1,45 @@
+.header {
+display: flex;
+/* justify-content: center; */
+align-items: center;
+width: 100%;
+height: 100px;
+background-color: rgb(216, 166, 90);
+gap: 20px;
+padding-left: 50px;
+
+}
+
+.header a {
+    color:rgb(12, 14, 15);
+    font-size: xx-large;
+    
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+
+.main {
+flex: 1;
+width: 100%;
+padding: 0px 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(230, 208, 175);
+}
+
+.linkActive {
+    text-decoration: underline;
+    background-color: #006cd0;
+    color: aliceblue !important;
+    border-radius: 5px;
+
+}
