@@ -12,24 +12,29 @@ import Layout from "./layout/Layout";
 import Lesson05 from "./lessons/lesson05/Lesson05";
 import FetchFox from "./components/FetchFox/FetchFox";
 import NoPage from "./components/noPage/NoPage";
-import HomePage from "./components/homePage/HomePage";
+import HomePage from "./components/lessonsList/Lessons";
 import Lesson04 from "./lessons/lesson04/Lesson04";
 import Bitcoin from "./components/bitcoin/Bitcoin";
 import UsersPage from "./components/usersPage/UsersPage";
+import Lesson01 from "./lessons/lesson01/Lesson01";
+import Lesson02 from "./lessons/lesson02/Lesson02";
+import Lesson03 from "./lessons/lesson03/Lesson03";
+import Lessons from "./components/lessonsList/Lessons";
+import MyHomePage from "./components/myHomePage/MyHomePage";
 
 function App() {
   return (
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="lesson05" element={<Lesson05 />} />
+          <Route path="/" element={<MyHomePage/>} />
+          <Route path="Lessons" element={<Lessons />} />
           <Route path="fetch-fox" element={<FetchFox />} />
-          <Route path="lesson-1" element={<h2>lesson1</h2>
+          <Route path="lesson-1" element={<Lesson01/>}
+          />
+          <Route path="lesson-2" element={<Lesson02/>
           } />
-          <Route path="lesson-2" element={<h2>lesson2</h2>
-          } />
-          <Route path="lesson-3" element={<h2>lesson3</h2>
+          <Route path="lesson-3" element={<Lesson03/>
           } />
           <Route path="lesson-4" element={<Lesson04 />} />
           <Route path="lesson-5" element={<Lesson05 />} />

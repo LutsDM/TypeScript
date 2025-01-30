@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import styles from './homePage.module.css'
+import styles from './lessons.module.css'
 
-export default function HomePage() {
+export default function Lessons() {
   return (
     <div>
-      <h2>Home page</h2>
+      <h2>Lessons</h2>
       <div className={styles.gridContainer}>
         <Link to='lesson-1'><div>Lesson 1</div></Link>
         <Link to='lesson-2'><div>Lesson 2</div></Link>
