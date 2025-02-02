@@ -28,6 +28,8 @@ import Homework03 from "./homeworks/homework03/Homework03";
 import UserCard from "./components/userCard/UserCard";
 import HomeworkList from "./homeworks/homeworkList/HomeworkList";
 import FormGender from "./components/formGender/FormGender";
+import { CiAirportSign1 } from "react-icons/ci";
+import CinemasAroundMe from "./homeworks/homework07/CinemasAroundMe/CinemasAroundMe";
 
 function App() {
   return (
@@ -56,6 +58,7 @@ function App() {
           <Route path="homework-4" element={<Homework08 />} />
           <Route path="homework-5" element={<Feedback />} />
           <Route path="homework-6" element={<FormGender />} />
+          <Route path="homework-7" element={<CinemasAroundMe />} />
          
           <Route path="*" element={<NoPage />} />
         </Route>
