@@ -19,7 +19,7 @@ export default function Header() {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? styles.linkActive : "")}
-          to="Homework"
+          to="Homeworks"
         >
           Homework
         </NavLink>

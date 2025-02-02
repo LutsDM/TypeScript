@@ -1,6 +1,4 @@
 
-import './myInput.css'
-
 interface IMyInputProps {
   name: string
   placeholder: string

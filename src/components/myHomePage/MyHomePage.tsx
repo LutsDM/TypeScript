@@ -1,6 +1,6 @@
 import styles from "./home.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faReact, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from 'react-icons/fa';
+import { SiTypescript } from 'react-icons/si';
 
 export default function HomePage() {
   return (
@@ -12,29 +12,29 @@ export default function HomePage() {
       <p className={styles.text}>
         Here, I explored:
       </p>
-      <ul className={styles.skillsList}>
-        <li>
-          <FontAwesomeIcon icon={faHtml5} size="2x" className={styles.icon} />
+      <div className={styles.skills}>
+        <div className={styles.skill}>
+          <FaHtml5 size="3em" className={styles.icon} />
           <span className={styles.skillName}>HTML5</span>
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faCss3Alt} size="2x" className={styles.icon} />
+        </div>
+        <div className={styles.skill}>
+          <FaCss3Alt size="3em" className={styles.icon} />
           <span className={styles.skillName}>CSS</span>
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faJsSquare} size="2x" className={styles.icon} />
+        </div>
+        <div className={styles.skill}>
+          <FaJsSquare size="3em" className={styles.icon} />
           <span className={styles.skillName}>JavaScript</span>
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faReact} size="2x" className={styles.icon} />
+        </div>
+        <div className={styles.skill}>
+          <FaReact size="3em" className={styles.icon} />
           <span className={styles.skillName}>React</span>
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faGitAlt} size="2x" className={styles.icon} />
+        </div>
+        <div className={styles.skill}>
+          <SiTypescript size="3em" className={styles.icon} />
           <span className={styles.skillName}>TypeScript</span>
-        </li>
-      </ul>
-
+        </div>
+      </div>
+      
       <a
         href="https://www.linkedin.com/in/dmytro-luts-a901b72b3/"
         target="_blank"
