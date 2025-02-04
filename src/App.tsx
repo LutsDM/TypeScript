@@ -30,6 +30,10 @@ import HomeworkList from "./homeworks/homeworkList/HomeworkList";
 import FormGender from "./components/formGender/FormGender";
 import { CiAirportSign1 } from "react-icons/ci";
 import CinemasAroundMe from "./homeworks/homework07/CinemasAroundMe/CinemasAroundMe";
+import Lesson13 from "./lessons/lesson13/Lesson13";
+import RegistrationForm from "./components/registrationForm/RegistrationForm";
+import LoginFormValidation from "./components/loginFormValidation/LoginFormValidation";
+import Homework09 from "./homeworks/homework09/Homework09";
 
 function App() {
   return (
@@ -52,6 +56,7 @@ function App() {
           <Route path="lesson-10" element={<Lesson10 />} />
           <Route path="lesson-11" element={<Lesson11 />} />
           <Route path="lesson-12" element={<Lesson12 />} />
+          <Route path="lesson-13" element={<Lesson13 />} />
           <Route path="homework-1" element={<Homework01 />} />
           <Route path="homework-2" element={<Homework02 />} />
           <Route path="homework-3" element={<Homework03 />} />
@@ -59,6 +64,8 @@ function App() {
           <Route path="homework-5" element={<Feedback />} />
           <Route path="homework-6" element={<FormGender />} />
           <Route path="homework-7" element={<CinemasAroundMe />} />
+          <Route path="registrationAndLoginForm" element={<Homework09/>} />
+                   
          
           <Route path="*" element={<NoPage />} />
         </Route>

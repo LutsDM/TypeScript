@@ -1,0 +1,21 @@
+.registrationContainer {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 210px;
+}
+
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+.errorMessage {
+    color: red;
+       
+    font-size: 10px;
+}
+
+

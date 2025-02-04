@@ -51,7 +51,7 @@ export default function FormGender(): JSX.Element {
 
         <h2>{gender === "male" ? "Your gender is: 🧔🏽‍♂️ male" : gender === "female" ? "Your gender is: 👩🏽‍🦰 female" : "Gender not detected"} </h2>
 
-        <h2>{probability === "" ? "" : `Probability: ${probability}` }</h2>
+        <h2>{probability === "" ? "" : `Probability: ${probability*100}%` }</h2>
       </form>
     </div>
   );
