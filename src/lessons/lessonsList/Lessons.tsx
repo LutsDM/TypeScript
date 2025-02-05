@@ -19,6 +19,7 @@ export default function Lessons() {
         <Link to='/lesson-11'><div>Lesson 11</div></Link>
         <Link to='/lesson-12'><div>Lesson 12</div></Link>
         <Link to='/lesson-13'><div>Lesson 13</div></Link>
+        <Link to='/lesson-14'><div>Dynamic Routing</div></Link>
       </div>
     </>
   )

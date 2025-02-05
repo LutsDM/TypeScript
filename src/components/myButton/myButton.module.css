@@ -11,6 +11,11 @@
   background-color: #b92508
 }
 
+.easy {
+  background-color: #020201;
+  color: aliceblue;
+}
+
 .primary:hover {
   background-color: #03265A;
 }

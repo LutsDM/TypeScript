@@ -34,6 +34,8 @@ import Lesson13 from "./lessons/lesson13/Lesson13";
 import RegistrationForm from "./components/registrationForm/RegistrationForm";
 import LoginFormValidation from "./components/loginFormValidation/LoginFormValidation";
 import Homework09 from "./homeworks/homework09/Homework09";
+import Lesson14 from "./lessons/lesson14/Lesson14";
+import ProductPage from "./components/productPage/ProductPage";
 
 function App() {
   return (
@@ -65,6 +67,9 @@ function App() {
           <Route path="homework-6" element={<FormGender />} />
           <Route path="homework-7" element={<CinemasAroundMe />} />
           <Route path="registrationAndLoginForm" element={<Homework09/>} />
+          <Route path="lesson-14" element={<Lesson14/>} />
+          <Route path="lesson-14/:id" element={<ProductPage/>} />
+
                    
          
           <Route path="*" element={<NoPage />} />

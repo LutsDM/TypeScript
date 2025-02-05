@@ -1,0 +1,32 @@
+.limitForm {
+   display: flex;
+   justify-content: right;
+   align-items: center;
+    gap:5px;
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.limitForm input {
+    height: 8px;
+    width: 5px;
+   
+    min-width: 30px;
+}
+
+.limitForm span {
+    font-size: small;
+}
+
+.error {
+    color: red;
+    display: flex;
+    justify-content: right;
+   align-items: center;
+   font-size: small;
+   margin-bottom: 5px;
+  }
+
+  .button {
+    height: 8px;
+  }
