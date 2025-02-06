@@ -36,48 +36,53 @@ import LoginFormValidation from "./components/loginFormValidation/LoginFormValid
 import Homework09 from "./homeworks/homework09/Homework09";
 import Lesson14 from "./lessons/lesson14/Lesson14";
 import ProductPage from "./components/productPage/ProductPage";
+import { CartProvider } from "./components/context/CartContext";
+import Cart from "./components/cart/Cart";
+import Products from "./components/products/Products";
 
 function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<MyHomePage />} />
-          <Route path="Lessons" element={<Lessons />} />
-          <Route path="Homeworks" element={<HomeworkList />} />
-          <Route path="fetch-fox" element={<FetchFox />} />
-          <Route path="lesson-1" element={<Lesson01 />} />
-          <Route path="lesson-2" element={<Lesson02 />} />
-          <Route path="lesson-3" element={<Lesson03 />} />
-          <Route path="lesson-4" element={<Lesson04 />} />
-          <Route path="lesson-5" element={<Lesson05 />} />
-          <Route path="lesson-6" element={<h2>lesson6</h2>} />
-          <Route path="lesson-7" element={<h2>lesson7</h2>} />
-          <Route path="lesson-8" element={<Lesson08 />} />
-          <Route path="lesson-9" element={<Lesson09 />} />
-          <Route path="lesson-10" element={<Lesson10 />} />
-          <Route path="lesson-11" element={<Lesson11 />} />
-          <Route path="lesson-12" element={<Lesson12 />} />
-          <Route path="lesson-13" element={<Lesson13 />} />
-          <Route path="homework-1" element={<Homework01 />} />
-          <Route path="homework-2" element={<Homework02 />} />
-          <Route path="homework-3" element={<Homework03 />} />
-          <Route path="homework-4" element={<Homework08 />} />
-          <Route path="homework-5" element={<Feedback />} />
-          <Route path="homework-6" element={<FormGender />} />
-          <Route path="homework-7" element={<CinemasAroundMe />} />
-          <Route path="registrationAndLoginForm" element={<Homework09/>} />
-          <Route path="lesson-14" element={<Lesson14/>} />
-          <Route path="lesson-14/:id" element={<ProductPage/>} />
-
-                   
-         
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <CartProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<MyHomePage />} />
+            <Route path="Lessons" element={<Lessons />} />
+            <Route path="Homeworks" element={<HomeworkList />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="store" element={<Lesson14/>} />
+            <Route path="fetch-fox" element={<FetchFox />} />
+            <Route path="lesson-1" element={<Lesson01 />} />
+            <Route path="lesson-2" element={<Lesson02 />} />
+            <Route path="lesson-3" element={<Lesson03 />} />
+            <Route path="lesson-4" element={<Lesson04 />} />
+            <Route path="lesson-5" element={<Lesson05 />} />
+            <Route path="lesson-6" element={<h2>lesson6</h2>} />
+            <Route path="lesson-7" element={<h2>lesson7</h2>} />
+            <Route path="lesson-8" element={<Lesson08 />} />
+            <Route path="lesson-9" element={<Lesson09 />} />
+            <Route path="lesson-10" element={<Lesson10 />} />
+            <Route path="lesson-11" element={<Lesson11 />} />
+            <Route path="lesson-12" element={<Lesson12 />} />
+            <Route path="lesson-13" element={<Lesson13 />} />
+            <Route path="homework-1" element={<Homework01 />} />
+            <Route path="homework-2" element={<Homework02 />} />
+            <Route path="homework-3" element={<Homework03 />} />
+            <Route path="homework-4" element={<Homework08 />} />
+            <Route path="homework-5" element={<Feedback />} />
+            <Route path="homework-6" element={<FormGender />} />
+            <Route path="homework-7" element={<CinemasAroundMe />} />
+            <Route path="registrationAndLoginForm" element={<Homework09 />} />
+            <Route path="lesson-14" element={<Lesson14 />} />
+            <Route path="lesson-14/:id" element={<ProductPage />} />
+            <Route path="store/:id" element={<ProductPage />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </CartProvider>
   );
 }
 
 export default App;
-// <FormGender/>
+

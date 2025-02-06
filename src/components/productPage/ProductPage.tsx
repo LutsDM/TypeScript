@@ -19,21 +19,29 @@ const initialProduct: IProduct = {
 
 export default function ProductPage(): JSX.Element {
   const [product, setProduct] = useState<IProduct>(initialProduct);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false); // для управления анимацией
   const { id } = useParams();
 
   useEffect(() => {
     setTimeout(() => {
       fetch(`https://fakestoreapi.com/products/${id}`)
         .then((res) => res.json())
-        .then((data: IProduct) => setProduct(data));
+        .then((data: IProduct) => {
+          setProduct(data);
+          setIsLoaded(true);
+        });
     }, 1500);
   }, [id]);
 
   return (
-    <div className={styles.productPage}>
+    <>
       {product.title ? (
-        <>
-          <div className={styles.productDetails}>
+        <div className={styles.productPage}>
+          <div
+            className={`${styles.productDetails} ${
+              isLoaded ? styles.visible : styles.hidden
+            }`}
+          >
             <div className={styles.left}>
               <img src={product.image} alt={product.title} />
             </div>
@@ -51,10 +59,11 @@ export default function ProductPage(): JSX.Element {
           <Link to="/lesson-14" className={styles.backLink}>
             Back to main page
           </Link>
-        </>
+        </div>
       ) : (
         <Loader />
       )}
-    </div>
+    </>
   );
 }
+

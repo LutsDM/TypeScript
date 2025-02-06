@@ -15,3 +15,22 @@
     border-radius: 5px;
 
 }
+
+.totalAmount {
+    color: rgb(187, 94, 199);
+    font-size: 18px;
+    font-style: oblique;
+}
+
+.headerContainer {
+    width: 95%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+
+}
+
+.navyLinks {
+    display: flex;
+    gap: 20px;
+  }
