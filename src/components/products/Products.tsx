@@ -4,11 +4,9 @@ import { IProduct } from "./types/types";
 import ProductCard from "../productCard/ProductCard";
 import LimitForm from "./limitForm/LimitForm";
 import Loader from "../loader/Loader";
-import { useCart } from "../context/CartContext";
 
 export default function Products(): JSX.Element {
   const [products, setProducts] = useState<IProduct[]>([]);
-  const { addToCart } = useCart();
   const [limit, setLimit] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -48,18 +46,6 @@ export default function Products(): JSX.Element {
                   image={product.image}
                   price={product.price}
                 />
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: product.id,
-                      title: product.title,
-                      price: product.price,
-                      quantity: 1,
-                    })
-                  }
-                >
-                  Add to Cart
-                </button>
               </div>
             ))
           )}

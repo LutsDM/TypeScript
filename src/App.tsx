@@ -39,6 +39,7 @@ import ProductPage from "./components/productPage/ProductPage";
 import { CartProvider } from "./components/context/CartContext";
 import Cart from "./components/cart/Cart";
 import Products from "./components/products/Products";
+import Lesson16 from "./lessons/lesson16/Lesson16";
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
             <Route path="lesson-14" element={<Lesson14 />} />
             <Route path="lesson-14/:id" element={<ProductPage />} />
             <Route path="store/:id" element={<ProductPage />} />
+            <Route path="lesson-16" element={<Lesson16 />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
