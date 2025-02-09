@@ -11,7 +11,13 @@ export default function Layout() {
       <main className={styles.main}>
         <Outlet />
       </main>
-      <footer className={styles.footer}>Footer</footer>
+      <footer className={styles.footer}>
+        <a href="https://www.linkedin.com/in/dmytro-luts-a901b72b3/">
+        <div>
+        Linkedin
+        </div>
+        </a>
+        </footer>
     </>
   );
 }

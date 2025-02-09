@@ -14,6 +14,7 @@ export default function HomeworkList() {
         <Link to='/homework-6'><div>Homework 6</div></Link>
         <Link to='/homework-7'><div>Homework 7</div></Link>
         <Link to='/registrationAndLoginForm'><div>Yup</div></Link>
+        <Link to='/marsShots'><div>Mars Shots</div></Link>
       
       </div>
     </>

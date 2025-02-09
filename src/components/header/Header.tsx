@@ -30,13 +30,7 @@ export default function Header() {
       >
         Homework
       </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? styles.linkActive : "")}
-        to="Practice"
-      >
-        Practice
-      </NavLink>
-      <NavLink
+     <NavLink
         className={({ isActive }) => (isActive ? styles.linkActive : "")}
         to={"store"}
       >

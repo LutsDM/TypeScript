@@ -7,6 +7,7 @@ import Loader from "../loader/Loader";
 
 export default function Products(): JSX.Element {
   const [products, setProducts] = useState<IProduct[]>([]);
+  
   const [limit, setLimit] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
