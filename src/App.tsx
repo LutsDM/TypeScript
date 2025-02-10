@@ -40,7 +40,7 @@ import { CartProvider } from "./components/context/CartContext";
 import Cart from "./components/cart/Cart";
 import Products from "./components/products/Products";
 import Lesson16 from "./lessons/lesson16/Lesson16";
-import MarsShotsMain from "./components/marsShotsMain/MarsShotsMain";
+// import MarsShotsMain from "./components/marsShotsMain/marsCard/marsShotsMain/MarsShotsMain";
 
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
             <Route path="Lessons" element={<Lessons />} />
             <Route path="Homeworks" element={<HomeworkList />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="store" element={<Lesson14/>} />
+            <Route path="store" element={<Lesson14 />} />
             <Route path="fetch-fox" element={<FetchFox />} />
             <Route path="lesson-1" element={<Lesson01 />} />
             <Route path="lesson-2" element={<Lesson02 />} />
@@ -75,13 +75,13 @@ function App() {
             <Route path="homework-5" element={<Feedback />} />
             <Route path="homework-6" element={<FormGender />} />
             <Route path="homework-7" element={<CinemasAroundMe />} />
-            <Route path="marsShots" element={<MarsShotsMain />} />
+            {/* <Route path="marsShots" element={<MarsShotsMain />} /> */}
             <Route path="registrationAndLoginForm" element={<Homework09 />} />
             <Route path="lesson-14" element={<Lesson14 />} />
             <Route path="lesson-14/:id" element={<ProductPage />} />
             <Route path="store/:id" element={<ProductPage />} />
             <Route path="lesson-16" element={<Lesson16 />} />
-      
+
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
@@ -91,4 +91,3 @@ function App() {
 }
 
 export default App;
-
