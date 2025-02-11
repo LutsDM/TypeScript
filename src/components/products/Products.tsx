@@ -1,32 +1,39 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect} from "react";
 import styles from "./products.module.css";
-import { IProduct } from "./types/types";
+
 import ProductCard from "../productCard/ProductCard";
 import LimitForm from "./limitForm/LimitForm";
 import Loader from "../loader/Loader";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getLimitProducts, loadProducts } from "../../features/products/productsAction";
 
 export default function Products(): JSX.Element {
-  const [products, setProducts] = useState<IProduct[]>([]);
-  
-  const [limit, setLimit] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // const [products, setProducts] = useState<IProduct[]>([]);
+  const dispatch = useAppDispatch();
+  // const [limit, setLimit] = useState<number>(0);
+  // const [isLoading, setIsLoading] = useState<boolean>(true);
+  const {products, isLoading} = useAppSelector(state => state.products)
 
-  const getProducts = async (limit: number) => {
-    setIsLoading(true);
-    const res = await fetch(`https://fakestoreapi.com/products?limit=${limit}`);
-    const data: IProduct[] = await res.json();
-    setProducts(data);
-    setIsLoading(false);
-    console.log(data);
-  };
+  // const getProducts = async (limit: number) => {
+  //   setIsLoading(true);
+  //   const res = await fetch(`https://fakestoreapi.com/products?limit=${limit}`);
+  //   const data: IProduct[] = await res.json();
+  //   setProducts(data);
+  //   setIsLoading(false);
+  //   console.log(data);
+  // };
 
   const handleLimitChange = (newLimit: number) => {
-    setLimit(newLimit);
-    getProducts(newLimit);
+    dispatch(getLimitProducts(newLimit));
+    // setLimit(newLimit);
+    // getProducts(newLimit);
   };
 
   useEffect(() => {
-    getProducts(limit);
+
+   dispatch(loadProducts());
+    // getProducts(limit);
   }, []);
 
   return (

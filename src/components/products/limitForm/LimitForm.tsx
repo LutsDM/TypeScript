@@ -17,7 +17,7 @@ export default function LimitForm({
   });
 
   const formik = useFormik({
-    initialValues: { count: 0 },
+    initialValues: { count: 20 },
     validateOnChange: false,
     validationSchema,
     onSubmit: (values, { resetForm }) => {

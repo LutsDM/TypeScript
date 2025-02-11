@@ -50,3 +50,13 @@ export default tseslint.config({
   },
 })
 ```
+
+Redux
+1. Установили зависимости по Redux
+npm i react-redux @reduxjs/toolkit
+2. Добавили файлы по store.ts и типизации жуков в папку App в src
+3. Обернуть все приложение в компонент Provider из Redux и передали ему в качестве props store.ts
+4. Создали в папке features папка с логикой для выбранных данных (products)
+5. В файле slice.ts описали логику работы с данными (сниппет: rtks) 
+6. В файле action.ts описали асинхронный action с ассинхронными action с запросом за данными для slice.ts (снипет: rtkat)
+7. Подключить slice.ts в store.ts

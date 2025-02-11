@@ -33,3 +33,7 @@
     display: flex;
     gap: 20px;
   }
+
+.userName {
+    color: blanchedalmond;
+}
