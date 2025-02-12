@@ -19,7 +19,7 @@ const initialProduct: IProduct = {
 
 export default function ProductPage(): JSX.Element {
   const [product, setProduct] = useState<IProduct>(initialProduct);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false); // для управления анимацией
+  const [isLoaded, setIsLoaded] = useState<boolean>(false); 
   const { id } = useParams();
 
   useEffect(() => {

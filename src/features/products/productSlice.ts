@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loadProducts } from './productsAction';
 import { getLimitProducts } from './productsAction';
-import { IProductState } from './type';
+import { IProductState } from '../cart/type';
 
 // создаем начальный объект-состояние для слайс
 const initialState: IProductState = {
