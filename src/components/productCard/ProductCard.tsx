@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./productCard.module.css";
-import { useCart } from "../context/CartContext";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice"; // Импортируй экшен
 
 interface IProductCardProps {
   id: number;
@@ -15,7 +16,19 @@ export default function ProductCard({
   price,
   image,
 }: IProductCardProps): JSX.Element {
-  const { addToCart } = useCart();
+  const dispatch = useDispatch(); // Используем dispatch для работы с Redux
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: id,
+        title: title,
+        price: price,
+        quantity: 1,
+        image: image,
+      })
+    );
+  };
 
   return (
     <div className={styles.shopContainerCard} key={id}>
@@ -28,15 +41,7 @@ export default function ProductCard({
       </Link>
       <button
         className={styles.addToCartButton}
-        onClick={() =>
-          addToCart({
-            id: id,
-            title: title,
-            price: price,
-            quantity: 1,
-            image: image,
-          })
-        }
+        onClick={handleAddToCart}
       >
         Add to Cart
       </button>

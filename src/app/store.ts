@@ -1,6 +1,7 @@
+import { cartSlice } from './../features/cart/cartSlice';
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import productSlice from "../features/products/productSlice"
-import authSlice from "../components/auth/authSlice"
+import authSlice from "../features/auth/authSlice"
 
 
 // * в store хранятся данные из всего react приложения
@@ -9,9 +10,8 @@ import authSlice from "../components/auth/authSlice"
 export const store = configureStore({
   reducer: {
    products: productSlice.reducer,
-   auth: authSlice.reducer,
-
-    // здесь могли бы быть ваши редьюсеры
+   cart: cartSlice.reducer,
+   auth: authSlice.reducer,    
   },
 })
 

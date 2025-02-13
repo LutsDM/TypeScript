@@ -1,22 +1,19 @@
 import styles from "./cart.module.css";
-import { useCart } from "../context/CartContext";
 import MyButton from "../myButton/MyButton";
-import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../app/store";
+import {
+  selectTotalAmount,
+  plusQuantity,
+  minusQuantity,
+  removeFromCart,
+  clearCart,
+} from "../../features/cart/cartSlice";
 
 export default function Cart(): JSX.Element {
-  const {
-    cart,
-    clearCart,
-    removeFromCart,
-    totalAmount,
-    plusQuantity,
-    minusQuantity,
-  } = useCart();
-  const [total, setTotal] = useState<number>(0);
-
-  useEffect(() => {
-    setTotal(totalAmount());
-  }, [cart]);
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart.items);
+  const total = useSelector(selectTotalAmount);
 
   return (
     <div>
@@ -38,34 +35,34 @@ export default function Cart(): JSX.Element {
               </tr>
             </thead>
             <tbody>
-              {cart.map((el, index) => (
-                <tr key={el.id}>
+              {cart.map((item, index) => (
+                <tr key={item.id}>
                   <td>{index + 1}</td>
                   <td>
-                    <img src={el.image} alt={el.title} width="25" />
+                    <img src={item.image} alt={item.title} width="25" />
                   </td>
-                  <td>{el.title}</td>
-                  <td>{el.price} EUR</td>
+                  <td>{item.title}</td>
+                  <td>{item.price.toFixed(2)} EUR</td>
                   <td>
                     <button
                       className={styles.buttonX}
-                      onClick={() => minusQuantity(el.id)}
+                      onClick={() => dispatch(minusQuantity(item.id))}
                     >
                       -
                     </button>
-                    {el.quantity}
+                    {item.quantity}
                     <button
                       className={styles.buttonX}
-                      onClick={() => plusQuantity(el.id)}
+                      onClick={() => dispatch(plusQuantity(item.id))}
                     >
                       +
                     </button>
                   </td>
-                  <td>{(el.price * el.quantity).toFixed(2)} EUR</td>
+                  <td>{(item.price * item.quantity).toFixed(2)} EUR</td>
                   <td>
                     <button
                       className={styles.buttonX}
-                      onClick={() => removeFromCart(el.id)}
+                      onClick={() => dispatch(removeFromCart(item.id))}
                     >
                       X
                     </button>
@@ -77,7 +74,7 @@ export default function Cart(): JSX.Element {
           <div className={styles.amountContainer}>
             Total amount: {total.toFixed(2)} EUR
           </div>
-          <MyButton text="Delete All" variant="danger" func={clearCart} />
+          <MyButton text="Delete All" variant="danger" func={() => dispatch(clearCart())} />
         </div>
       )}
     </div>

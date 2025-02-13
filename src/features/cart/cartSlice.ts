@@ -1,6 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ICart, ICartItem } from "./type";
 
 const initialState: ICart = {
   items: [],
@@ -9,25 +8,43 @@ const initialState: ICart = {
 };
 
 export const cartSlice = createSlice({
-  name: 'sliceName',
+  name: "cart",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(thunkName.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(thunkName.fulfilled, (state, action) => {
-        state.isLoading = false
-        state.products = action.payload;
-      })
-      .addCase(thunkName.rejected, (state, action) => {
-        state.isLoading = false
-        state.values = []
-        state.error = action.payload as string
-      })
+  reducers: {
+    addToCart: (state, action: PayloadAction<ICartItem>) => {
+      const product = action.payload;
+      const productExist = state.items.find((item) => item.id === product.id);
+
+      if (productExist) {
+        productExist.quantity += 1; // Изменяем напрямую через immer
+      } else {
+        state.items.push({ ...product, quantity: 1 });
+      }
+    },
+    removeFromCart: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter((item) => item.id !== action.payload);
+    },
+    clearCart: (state) => {
+      state.items = [];
+    },
+    plusQuantity: (state, action: PayloadAction<number>) => {
+      const item = state.items.find((i) => i.id === action.payload);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+    minusQuantity: (state, action: PayloadAction<number>) => {
+      const item = state.items.find((i) => i.id === action.payload);
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+      }
+    },
   },
 });
 
-export default cartSlice;
-export const { } = cartSlice.actions
+export default cartSlice.reducer;
+export const { addToCart, removeFromCart, clearCart, plusQuantity, minusQuantity } = cartSlice.actions;
+
+// **Селектор для подсчета суммы заказа**
+export const selectTotalAmount = (state: { cart: ICart }) =>
+  state.cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0);

@@ -10,9 +10,14 @@
 
 .linkActive {
     text-decoration: underline;
-    color: aliceblue !important;
+    color: aqua;
     border-radius: 5px;
+    cursor: pointer;
 
+}
+
+.linkActive:hover {
+    color: rgb(51, 143, 143)
 }
 
 .totalAmount {
@@ -37,3 +42,13 @@
 .userName {
     color: blanchedalmond;
 }
+.cartAndLogin {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+ 
